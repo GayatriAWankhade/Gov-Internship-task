@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import OnboardingWizard from './components/onboarding/OnboardingWizard';
+import Dashboard from './components/dashboard/Dashboard';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
-function App() {
+const App = () => {
+  const [userData, setUserData] = useLocalStorage('userData', null);
+  const [currentView, setCurrentView] = useState('onboarding');
+
+  useEffect(() => {
+    if (userData) {
+      setCurrentView('dashboard');
+    }
+  }, [userData]);
+
+  const handleOnboardingComplete = (data) => {
+    setUserData(data);
+    setCurrentView('dashboard');
+  };
+
+  const resetOnboarding = () => {
+    setUserData(null);
+    setCurrentView('onboarding');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {currentView === 'onboarding' ? (
+        <OnboardingWizard onComplete={handleOnboardingComplete} />
+      ) : (
+        <Dashboard userData={userData} onReset={resetOnboarding} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
