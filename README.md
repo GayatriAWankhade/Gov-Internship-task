@@ -34,5 +34,5 @@ It is fully responsive on all screen sizes.
 - Git installed
 
 ## Screenshot
-Instead of screenshots, I have deployed the project so you can explore it directly here: [gov-internship-task-git-main-gayatri-wankhades-projects.vercel.app].
+Instead of screenshots, I have deployed the project so you can explore it directly here: "gov-internship-task-git-main-gayatri-wankhades-projects.vercel.app"
 
