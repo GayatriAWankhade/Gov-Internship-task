@@ -6,6 +6,7 @@ I have craeted a full-stack onboarding dashboard application developed as part o
 ### Tech Stack Used
 
 ### Frontend:
+It is fully responsive on all screen sizes.
 - **React.js** – Component-based UI library  
 - **Vite** – Fast frontend build tool  
 - **TypeScript** – Strongly typed JavaScript  
