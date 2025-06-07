@@ -32,3 +32,7 @@ It is fully responsive on all screen sizes.
 - Node.js and npm installed
 - MongoDB installed or MongoDB Atlas URI
 - Git installed
+
+## Screenshot
+Instead of screenshots, I have deployed the project so you can explore it directly here: [gov-internship-task-git-main-gayatri-wankhades-projects.vercel.app].
+
